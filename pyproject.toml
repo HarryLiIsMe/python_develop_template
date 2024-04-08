@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "python_develop_template"
+version = "0.1.0"
+description = ""
+authors = ["root <root@gmail.com>"]
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.13"
+python-dotenv = "^1.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+setuptools = "^69.2.0"
+black = "^24.3.0"
+pylint = "^3.1.0"
+pyinstaller = "^6.5.0"
+pyclean = "^3.0.0"
+isort = "^5.13.2"
+mypy = "^1.9.0"
+pycodestyle = "^2.11.1"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.1.1"
+pytest-sugar = "^1.0.0"
+pytest-rerunfailures = "^14.0"
+pytest-xdist = "^3.5.0"
+pytest-assume = "^2.4.3"
+pytest-html = "^4.1.1"
+python-dotenv = "^1.0.1"
+pytest-mock = "^3.14.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
