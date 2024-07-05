@@ -4,3 +4,4 @@ dist/
 bins/
 packs/
 __pycache__/
+.env
