@@ -1,12 +1,9 @@
 PYTHON=python3
+PYENV=pyenv
 RM=rm -rf
 
 
-all: rebuild_bins rebuild_packs
-
-rebuild_bins: clean build_bins
-
-rebuild_packs: clean build_packs
+all: clean build_bins build_packs
 
 
 run:
@@ -16,14 +13,21 @@ run_release:
 	$(PYTHON) -m poetry run $(PYTHON) -O src/python_develop_template/main.py
 	# $(PYTHON) -O0 main.py
 
-
 build_bins:
 	$(PYTHON) -m poetry run pyinstaller -y --distpath bins .pyinstaller.spec
 
+rebuild_bins: clean build_bins
+
 build_packs:
 	$(PYTHON) -m poetry build -o packs
+	
+rebuild_packs: clean build_packs
+
 
 envset:
+	$(PYENV) install -s
+	$(PYENV) local
+	# $(PYTHON) --version
 	$(PYTHON) -m pip install --upgrade poetry
 	$(PYTHON) -m poetry config virtualenvs.create true
 	$(PYTHON) -m poetry config virtualenvs.in-project true
@@ -79,6 +83,3 @@ lint:
 
 test:
 	$(PYTHON) -m poetry run pytest -v -c .pytest.ini tests
-
-
-
