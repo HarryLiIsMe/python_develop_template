@@ -83,3 +83,7 @@ lint:
 
 test:
 	$(PYTHON) -m poetry run pytest -v -c .pytest.ini tests
+
+bench:
+
+coverage:
