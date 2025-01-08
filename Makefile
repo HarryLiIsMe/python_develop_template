@@ -1,4 +1,6 @@
 PYTHON=python3
+# pyenv is not a python package, so it can't be installed via pip\pip3 tool. 
+# The way that how to install pyenv is in "https://github.com/pyenv/pyenv".  
 PYENV=pyenv
 RM=rm -rf
 
