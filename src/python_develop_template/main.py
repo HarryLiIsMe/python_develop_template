@@ -10,7 +10,7 @@ def main() -> None:
     project_name = os.getenv("PROJECT_NAME")
     if project_name == None:
         print("env load failed!!!")
-        sys.exit(-1) 
+        sys.exit(-1)
 
     print("hello world", project_name)
 
