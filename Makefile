@@ -36,6 +36,7 @@ envset:
 
 install:
 	$(PYTHON) -m poetry install
+	# $(PYTHON) -m poetry add --group=dev poethepoet
 	# $(PYTHON) -m poetry add --group=dev pyinstaller
 	# $(PYTHON) -m poetry add --group=dev setuptools
 	# $(PYTHON) -m poetry add --group=dev black
@@ -89,3 +90,6 @@ test:
 bench:
 
 coverage:
+
+hello_world:
+	$(PYTHON) -m poetry poe hello_world
